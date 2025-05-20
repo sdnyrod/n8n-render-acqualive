@@ -1,7 +1,7 @@
 FROM n8nio/n8n:latest
 
-# Usa o entrypoint padrão da imagem
-ENTRYPOINT ["/docker-entrypoint.sh"]
+# Copia variáveis e configurações do host (opcional, se tiver)
+# COPY ./localfiles /data
 
-# Usa o caminho absoluto do binário do n8n
-CMD ["/usr/local/lib/node_modules/n8n/bin/n8n", "start"]
+# Comando de inicialização
+CMD ["n8n", "start"]
