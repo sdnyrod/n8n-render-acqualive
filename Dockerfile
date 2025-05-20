@@ -1,16 +1,10 @@
 FROM n8nio/n8n:latest
 
-# Define a working directory (boa prática)
+# Define diretório de trabalho (opcional)
 WORKDIR /data
 
-# Copia variáveis de ambiente do Render automaticamente (não é necessário aqui, mas ok)
-ENV N8N_BASIC_AUTH_ACTIVE=true
-ENV N8N_BASIC_AUTH_USER=admin
-ENV N8N_BASIC_AUTH_PASSWORD=admin123
-
-# Expõe a porta do N8N
+# Exponha a porta padrão
 EXPOSE 5678
 
-# Usa o entrypoint da imagem oficial e define o comando
-ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["tini", "--", "n8n"]
+# Use as variáveis de ambiente diretamente no Render (não precisa copiar aqui)
+ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
