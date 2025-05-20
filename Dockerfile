@@ -1,11 +1,9 @@
-FROM node:18
-
-WORKDIR /app
-
-RUN npm install -g n8n
+FROM docker.n8n.io/n8n
 
 ENV N8N_HOST=0.0.0.0
+ENV N8N_PORT=5678
+ENV N8N_PROTOCOL=http
 
 EXPOSE 5678
 
-CMD ["npx", "n8n"]
+CMD ["n8n"]
