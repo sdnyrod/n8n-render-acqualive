@@ -13,4 +13,4 @@ EXPOSE 5678
 
 # Usa o entrypoint da imagem oficial e define o comando
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["n8n"]
+CMD ["tini", "--", "n8n"]
