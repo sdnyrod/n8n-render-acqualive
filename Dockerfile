@@ -1,13 +1,5 @@
-FROM n8nio/n8n
+# Usa imagem oficial do N8N
+FROM n8nio/n8n:latest
 
-ENV N8N_BASIC_AUTH_ACTIVE=true
-ENV N8N_BASIC_AUTH_USER=admin
-ENV N8N_BASIC_AUTH_PASSWORD=AcquaN8n@2025
-ENV N8N_PORT=5678
-ENV N8N_HOST=0.0.0.0
-ENV WEBHOOK_URL=https://n8n-acqualive.onrender.com
-ENV EXECUTIONS_MODE=own
-ENV NODE_ENV=production
-
-EXPOSE 5678
-CMD ["n8n", "start", "--tunnel"]
+# Define o comando de inicialização padrão
+CMD ["n8n"]
